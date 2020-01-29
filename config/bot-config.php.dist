@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'apiToken' => 'API_TOKEN',
+    'botLink' => '@BOT_LINK',
+    'applicationKey' => '123',
+];
