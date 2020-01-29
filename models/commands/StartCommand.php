@@ -18,8 +18,8 @@ class StartCommand extends Command
     {
         return new Message([
             "text" => \Yii::t('app', "Hello!!!"),
-            "chatId" => $this->telegramBotResponse->chatId(),
-            "messageId" => $this->telegramBotResponse->messageId(),
+            "chatId" => $this->telegramBotRequest->chatId(),
+            "messageId" => $this->telegramBotRequest->messageId(),
         ]);
     }
 

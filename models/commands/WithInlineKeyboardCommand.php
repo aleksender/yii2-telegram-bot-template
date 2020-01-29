@@ -23,8 +23,8 @@ class WithInlineKeyboardCommand extends Command
     {
         return new Message([
             'text' => \Yii::t('app', 'Return message'),
-            'messageId' => $this->telegramBotResponse->messageId(),
-            'chatId' => $this->telegramBotResponse->chatId(),
+            'messageId' => $this->telegramBotRequest->messageId(),
+            'chatId' => $this->telegramBotRequest->chatId(),
             'keyboard' => new InlineKeyboardMarkup([
                 [
                     ['text' => TelegramSmile::football() . ' ' . \Yii::t('app', 'Football'), 'callback_data' => StartCommand::name()],

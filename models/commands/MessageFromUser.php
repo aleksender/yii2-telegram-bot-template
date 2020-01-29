@@ -11,7 +11,7 @@ class MessageFromUser extends Command
      */
     public function execute()
     {
-        $message = $this->telegramBotResponse->command();
+        $message = $this->telegramBotRequest->command();
 
         /**
          * Work with message here...
@@ -27,8 +27,8 @@ class MessageFromUser extends Command
     {
         return new Message([
             "text" => \Yii::t('app', "Your message was processed"),
-            "chatId" => $this->telegramBotResponse->chatId(),
-            "messageId" => $this->telegramBotResponse->messageId(),
+            "chatId" => $this->telegramBotRequest->chatId(),
+            "messageId" => $this->telegramBotRequest->messageId(),
         ]);
     }
 

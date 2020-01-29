@@ -1,4 +1,4 @@
-Telegram bot base on Yii2 basic project template. See [about yii2](https://github.com/yiisoft/yii2-app-basic).
+Telegram bot based on Yii2 basic project template. See [about yii2](https://github.com/yiisoft/yii2-app-basic).
 
 ## Changes other than the basic template
 

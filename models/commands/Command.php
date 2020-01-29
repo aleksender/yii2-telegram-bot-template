@@ -4,10 +4,8 @@ namespace app\models\commands;
 
 
 use app\models\exceptions\BadCommandException;
-use app\models\MessageExamples;
 use app\models\messages\Message;
 use app\models\TelegramBotRequest;
-use app\models\User;
 
 /**
  * Class Command
@@ -19,20 +17,15 @@ abstract class Command
     /**
      * @var TelegramBotRequest
      */
-    protected $telegramBotResponse;
-    /**
-     * @var User
-     */
-    protected $user;
+    protected $telegramBotRequest;
 
     /**
      * Command constructor.
-     * @param TelegramBotRequest $telegramBotResponse
+     * @param TelegramBotRequest $telegramBotRequest
      */
-    public function __construct(TelegramBotRequest $telegramBotResponse)
+    public function __construct(TelegramBotRequest $telegramBotRequest)
     {
-        $this->telegramBotResponse = $telegramBotResponse;
-        $this->user = User::fromTelegramRequest($telegramBotResponse);
+        $this->telegramBotRequest = $telegramBotRequest;
     }
 
     /**
@@ -49,7 +42,7 @@ abstract class Command
 
     /**
      * @param TelegramBotRequest $telegramBotRequest
-     * @return StartCommand
+     * @return Command
      * @throws BadCommandException
      */
     public static function factory(TelegramBotRequest $telegramBotRequest)
